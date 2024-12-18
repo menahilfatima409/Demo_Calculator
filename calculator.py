@@ -1,5 +1,6 @@
-# Simple Python Calculator
+import streamlit as st
 
+# Function definitions for calculations
 def add(a, b):
     return a + b
 
@@ -14,27 +15,11 @@ def divide(a, b):
         return "Error! Division by zero."
     return a / b
 
-print("Simple Calculator")
-print("Select operation:")
-print("1. Add")
-print("2. Subtract")
-print("3. Multiply")
-print("4. Divide")
+# Streamlit app
+st.title("Simple Calculator App")
 
-# Take input from the user
-choice = input("Enter choice (1/2/3/4): ")
+# Instructions
+st.write("### Perform basic calculations (Addition, Subtraction, Multiplication, Division)")
 
-if choice in ('1', '2', '3', '4'):
-    num1 = float(input("Enter first number: "))
-    num2 = float(input("Enter second number: "))
-
-    if choice == '1':
-        print(f"The result is: {add(num1, num2)}")
-    elif choice == '2':
-        print(f"The result is: {subtract(num1, num2)}")
-    elif choice == '3':
-        print(f"The result is: {multiply(num1, num2)}")
-    elif choice == '4':
-        print(f"The result is: {divide(num1, num2)}")
-else:
-    print("Invalid input. Please choose a valid operation.")
+# User input for two numbers
+num1 = st.number_input("Enter first number:", value=0.0, step=0.
